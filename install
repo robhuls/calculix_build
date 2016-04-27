@@ -36,6 +36,7 @@ mkdir $PROGSDIR/include/spooles/MT
 cp spoolesMT.h $PROGSDIR/include/spooles/MT
 cd ../..
 rm SPOOLES.2.2 -Rf
+rm spooles.2.2.tgz
 
 # Install ARPACK to support CalculiX
 echo 'Building ARPACK'
@@ -50,6 +51,8 @@ make lib > ../ARPACK_make.txt 2> ../ARPACK_error.txt
 cp libarpack_linux.a $PROGSDIR/lib
 cd ..
 rm ARPACK -rf
+rm arpack96.tar.gz
+rm patch.tar.gz
 
 # CGX from CalculiX
 echo 'Installing CGX'
@@ -62,6 +65,8 @@ cp cgx $PROGSDIR/bin
 cd ../../..
 cp cgx_2.10.pdf $PROGSDIR/doc/
 rm CalculiX -Rf
+rm cgx_2.10.all.tar.bz2
+rm cgx_2.10.pdf
 
 # CCX 2.10 with pardiso and spooles
 echo 'Installing CCX 2.10'
@@ -70,10 +75,12 @@ wget http://www.dhondt.de/ccx_2.10.src.tar.bz2
 tar xjf ccx_2.10.src.tar.bz2
 cd CalculiX/ccx_2.10
 cd src
-cp ../../../ccx_Makefile_210 Makefile
+cp ../../../ccx_Makefile Makefile
 make > ../../../ccx_make.txt 2> ../../../ccx_error.txt
 cp ccx_2.10 $PROGSDIR/bin
 cp LOGBOOK $PROGSDIR/doc
 cd ../../..
 cp ccx_2.10.pdf $PROGSDIR/doc
 rm CalculiX -Rf
+rm ccx_2.10.pdf
+rm ccx_2.10.src.tar.bz2
