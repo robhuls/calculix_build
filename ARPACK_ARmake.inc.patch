@@ -1,0 +1,39 @@
+--- ARPACK/ARmake.inc	1996-04-26 21:12:57.000000000 +0200
++++ ARmake.inc	2014-02-13 11:25:35.000000000 +0100
+@@ -25,14 +25,14 @@
+ # | other than your home directory.      |
+ # %--------------------------------------%
+ #
+-home = $(HOME)/ARPACK
++home = $(HOME)/build_calculix/ARPACK
+ #
+ #  %--------------------------------------%
+ #  | The platform identifier to suffix to |
+ #  | the end of library names             |
+ #  %--------------------------------------%
+ #
+-PLAT = SUN4
++PLAT = linux
+ #
+ #  %------------------------------------------------------%
+ #  | The directories to find the various pieces of ARPACK |
+@@ -101,8 +101,8 @@
+ # | for your system.                        |
+ # %-----------------------------------------%
+ #
+-FC      = f77
+-FFLAGS	= -O -cg89
++FC      = gfortran
++FFLAGS	= -O2
+ 
+ LDFLAGS = 
+ CD      = cd
+@@ -112,7 +112,7 @@
+ LN      = ln
+ LNFLAGS = -s
+ 
+-MAKE    = /bin/make
++MAKE    = /usr/bin/make
+ 
+ RM      = rm
+ RMFLAGS = -f
