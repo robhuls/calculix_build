@@ -4,7 +4,7 @@ Makefiles to build SPOOLES, ARPACK and CalculiX. The scripts automatically pull 
 
 The script can be run anywhere after downloading:
 
-git clone https://github.com/luvres/calculix_build.git
+git clone https://github.com/robhuls/calculix_build.git
 
 cd calculix_build/
 
