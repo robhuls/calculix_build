@@ -5,7 +5,7 @@
  # %--------------------------------------%
  #
 -home = $(HOME)/ARPACK
-+home = $(HOME)/build_calculix/ARPACK
++home = $(HOME_BUILD)/ARPACK
  #
  #  %--------------------------------------%
  #  | The platform identifier to suffix to |
