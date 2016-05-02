@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # You must run this in ~/build_calculix (hard coded in the ARPACK patch)
 # You will need gcc-fortran, cpio, freeglut, glu
 
@@ -9,6 +11,7 @@ export LDFLAGS="-L$PROGSDIR/lib"
 export CPPFLAGS="-I$PROGSDIR/include"
 export MY_LIB=$PROGSDIR/lib
 export MY_INCLUDE=$PROGSDIR/include
+export HOME_BUILD=$PWD
 
 mkdir -p $PROGSDIR
 mkdir -p $PROGSDIR/bin
@@ -17,7 +20,7 @@ mkdir -p $PROGSDIR/doc
 mkdir -p $PROGSDIR/include
  
 # Spooles as solver for CCX
-wget http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
+wget -c --tries=1000000 http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
 mkdir SPOOLES.2.2
 cp spooles.2.2.tgz SPOOLES.2.2
 cd SPOOLES.2.2
@@ -40,8 +43,8 @@ rm spooles.2.2.tgz
 
 # Install ARPACK to support CalculiX
 echo 'Building ARPACK'
-wget http://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz
-wget http://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz
+wget -c --tries=1000000 http://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz
+wget -c --tries=1000000 http://www.caam.rice.edu/software/ARPACK/SRC/patch.tar.gz
 tar xzf arpack96.tar.gz
 tar xzf patch.tar.gz
 cd ARPACK
@@ -56,8 +59,8 @@ rm patch.tar.gz
 
 # CGX from CalculiX
 echo 'Installing CGX'
-wget http://www.dhondt.de/cgx_2.10.all.tar.bz2
-wget http://www.dhondt.de/cgx_2.10.pdf
+wget -c --tries=1000000 http://www.dhondt.de/cgx_2.10.all.tar.bz2
+wget -c --tries=1000000 http://www.dhondt.de/cgx_2.10.pdf
 tar xjf cgx_2.10.all.tar.bz2
 cd CalculiX/cgx_2.10/src
 make > ../../../cgx_make.txt 2> ../../../cgx_error.txt
@@ -70,8 +73,8 @@ rm cgx_2.10.pdf
 
 # CCX 2.10 with pardiso and spooles
 echo 'Installing CCX 2.10'
-wget http://www.dhondt.de/ccx_2.10.pdf
-wget http://www.dhondt.de/ccx_2.10.src.tar.bz2
+wget -c --tries=1000000 http://www.dhondt.de/ccx_2.10.pdf
+wget -c --tries=1000000 http://www.dhondt.de/ccx_2.10.src.tar.bz2
 tar xjf ccx_2.10.src.tar.bz2
 cd CalculiX/ccx_2.10
 cd src
