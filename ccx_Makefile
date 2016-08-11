@@ -28,19 +28,19 @@ FPPSTOP=-x none
 
 include Makefile.inc
 
-SCCXMAIN = ccx_2.10.c
+SCCXMAIN = ccx_2.11.c
 
 # OCCXCU = $(SCCXCU:.cu=.o)
 OCCXF = $(SCCXF:.f=.o)
 OCCXC = $(SCCXC:.c=.o)
 OCCXMAIN = $(SCCXMAIN:.c=.o)
 
-ccx_2.10: $(OCCXMAIN) ccx_2.10.a \
-    ./date.pl; $(CC) $(CFLAGS) -c ccx_2.10.c; \
-    $(FC) $(FFLAGS) -o $@ $(FPPSTOP) $(OCCXMAIN) ccx_2.10.a \
+ccx_2.11: $(OCCXMAIN) ccx_2.11.a \
+    ./date.pl; $(CC) $(CFLAGS) -c ccx_2.11.c; \
+    $(FC) $(FFLAGS) -o $@ $(FPPSTOP) $(OCCXMAIN) ccx_2.11.a \
     -Wl,--start-group \
 	$(LIBS) \
     -Wl,--end-group
 
-ccx_2.10.a: $(OCCXCU) $(OCCXF) $(OCCXC)
+ccx_2.11.a: $(OCCXCU) $(OCCXF) $(OCCXC)
 	ar vr $@ $?

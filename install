@@ -59,31 +59,31 @@ rm patch.tar.gz
 
 # CGX from CalculiX
 echo 'Installing CGX'
-wget -c --tries=1000000 http://www.dhondt.de/cgx_2.10.all.tar.bz2
-wget -c --tries=1000000 http://www.dhondt.de/cgx_2.10.pdf
-tar xjf cgx_2.10.all.tar.bz2
-cd CalculiX/cgx_2.10/src
+wget -c --tries=1000000 http://www.dhondt.de/cgx_2.11.all.tar.bz2
+wget -c --tries=1000000 http://www.dhondt.de/cgx_2.11.pdf
+tar xjf cgx_2.11.all.tar.bz2
+cd CalculiX/cgx_2.11/src
 make > ../../../cgx_make.txt 2> ../../../cgx_error.txt
 cp cgx $PROGSDIR/bin
 cd ../../..
-cp cgx_2.10.pdf $PROGSDIR/doc/
+cp cgx_2.11.pdf $PROGSDIR/doc/
 rm CalculiX -Rf
-rm cgx_2.10.all.tar.bz2
-rm cgx_2.10.pdf
+rm cgx_2.11.all.tar.bz2
+rm cgx_2.11.pdf
 
-# CCX 2.10 with pardiso and spooles
-echo 'Installing CCX 2.10'
-wget -c --tries=1000000 http://www.dhondt.de/ccx_2.10.pdf
-wget -c --tries=1000000 http://www.dhondt.de/ccx_2.10.src.tar.bz2
-tar xjf ccx_2.10.src.tar.bz2
-cd CalculiX/ccx_2.10
+# CCX 2.11 with pardiso and spooles
+echo 'Installing CCX 2.11'
+wget -c --tries=1000000 http://www.dhondt.de/ccx_2.11.pdf
+wget -c --tries=1000000 http://www.dhondt.de/ccx_2.11.src.tar.bz2
+tar xjf ccx_2.11.src.tar.bz2
+cd CalculiX/ccx_2.11
 cd src
 cp ../../../ccx_Makefile Makefile
 make > ../../../ccx_make.txt 2> ../../../ccx_error.txt
-cp ccx_2.10 $PROGSDIR/bin
+cp ccx_2.11 $PROGSDIR/bin
 cp LOGBOOK $PROGSDIR/doc
 cd ../../..
-cp ccx_2.10.pdf $PROGSDIR/doc
+cp ccx_2.11.pdf $PROGSDIR/doc
 rm CalculiX -Rf
-rm ccx_2.10.pdf
-rm ccx_2.10.src.tar.bz2
+rm ccx_2.11.pdf
+rm ccx_2.11.src.tar.bz2
